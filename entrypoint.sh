@@ -22,7 +22,9 @@ if [ "$?" -ne 0 ] ; then
   exit 1
 fi
 
-builtfile=Test$(echo "${2%%.*}")
+filename=$(echo "${2%%.*}")
+capitalized=$(echo "$(tr '[:lower:]' '[:upper:]' <<< ${filename:0:1})${filename:1}" )
+builtfile=Test$(echo "$capitalized")
 
 for i in 1 2 3 4 5 6
 do
