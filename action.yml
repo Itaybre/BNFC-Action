@@ -6,8 +6,13 @@ inputs:
         description: 'Name of file to build'
         required: true
         default: 'CPP.cf'
+    path:  # id of input
+        description: 'Path to folder'
+        required: true
+        default: '/lab'
 runs:
     using: 'docker'
     image: 'Dockerfile'
     args:
+        - ${{ inputs.path }}
         - ${{ inputs.build_file }}
