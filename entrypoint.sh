@@ -1,6 +1,12 @@
 #!/bin/bash
 
-echo "Testing $1"
+echo "List files"
+
+cd /github/workspace
+
+ls
+
+echo "Building $1"
 
 bnfc -m $1
 if [ "$?" -ne 0 ] ; then
