@@ -1,0 +1,12 @@
+name: 'Test BNFC'
+description: 'Test bnfc'
+inputs:
+    build_file:  # id of input
+    description: 'Name of file to build'
+    required: true
+    default: 'CPP.cf'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.build_file }}
